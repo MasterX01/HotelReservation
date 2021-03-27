@@ -9,21 +9,21 @@ public class HotelReservationTest {
     @Test
     public void givenHotelDetails_whenAdding1stHotel_ShouldReturnTrue() {
         HotelReservation hotels = new HotelReservation();
-        Assertions.assertTrue(hotels.addHotel("Lalit", 5, 200));
+        Assertions.assertTrue(hotels.addHotel("Lalit", 5, 200, 100));
 
     }
 
     @Test
     public void givenHotelDetails_whenAdding2ndHotel_ShouldReturnTrue() {
         HotelReservation hotels = new HotelReservation();
-        Assertions.assertTrue(hotels.addHotel("Taj", 4, 150));
+        Assertions.assertTrue(hotels.addHotel("Taj", 4, 150, 75));
 
     }
 
     @Test
     public void givenHotelDetails_whenAdding3rdHotel_ShouldReturnTrue() {
         HotelReservation hotels = new HotelReservation();
-        Assertions.assertTrue(hotels.addHotel("BlueBell", 3, 100));
+        Assertions.assertTrue(hotels.addHotel("BlueBell", 3, 100, 50));
 
     }
 
