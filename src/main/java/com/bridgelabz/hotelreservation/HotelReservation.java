@@ -7,6 +7,7 @@ public class HotelReservation {
 
     public boolean addHotel(String hotelName, int rating){
         listOfHotels.add(new Hotel(hotelName, rating));
-        return true;
+        return !listOfHotels.isEmpty();
     }
+
 }
