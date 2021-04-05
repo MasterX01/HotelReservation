@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.hotelreservation.HotelReservationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-04-05T13:15:32" hostname="DESKTOP-2DC5FKU" time="0.025">
+<testsuite name="com.bridgelabz.hotelreservation.HotelReservationTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-04-05T13:31:53" hostname="DESKTOP-2DC5FKU" time="0.035">
   <properties/>
-  <testcase name="whenGivenHotel_WhenAdded_ShouldMatchTheAdded()" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.023"/>
+  <testcase name="whenGivenHotel_WhenAdded_ShouldMatchTheAdded()" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.03"/>
   <testcase name="given3Hotels_whenGivenDates_ShouldReturnCheapestHotel()" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.001"/>
+  <testcase name="givenWeekendRate_WhenAdded_ShouldMatch()" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

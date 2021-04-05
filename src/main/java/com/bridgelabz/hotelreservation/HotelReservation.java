@@ -5,11 +5,6 @@ import java.util.*;
 public class HotelReservation {
     public List<Hotel> listOfHotels = new ArrayList<>();
 
-    public static void display() {
-        System.out.println("Welcome to hotel reservation program");
-    }
-
-    // method to add hotels
     public void add(Hotel... hotels) {
         int i = 0;
         while (i < hotels.length) {

@@ -2,25 +2,28 @@ package com.bridgelabz.hotelreservation;
 
 public class Hotel {
     public String hotelName;
-    public int regularCustomerRate;
+    public int regularWeekDayRate;
+    public int regularWeekEndRate;
 
-    public Hotel(String hotelName, int regularCustomerRate) {
+    public Hotel(String hotelName, int regularWeekDayRate, int regularWeekEndRate) {
         this.hotelName = hotelName;
-        this.regularCustomerRate = regularCustomerRate;
+        this.regularWeekDayRate = regularWeekDayRate;
+        this.regularWeekEndRate = regularWeekEndRate;
+
     }
 
     @Override
     public String toString() {
-        String str = "Hotel name : " + this.hotelName + " rates for regular customer : " + this.regularCustomerRate;
+        String str = "Hotel name : " + this.hotelName + " rates for regular customer : " + this.regularWeekDayRate;
         return str;
     }
 
     // method to calculate price
-    public int calculatePrice(String[] days) {
+    public int calculatePrice(String...days) {
         int totalAmount = 0;
         int day=0;
         while(day<days.length) {
-            totalAmount += this.regularCustomerRate;
+            totalAmount += this.regularWeekDayRate;
             day++;
         }
         return totalAmount;
