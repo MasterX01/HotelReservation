@@ -1,26 +1,28 @@
 package com.bridgelabz.hotelreservation;
 
 public class Hotel {
-    String hotelName;
-    int rating;
-    int weekDayRates;
-    int weekendRates;
-    String typeOfCustomer;
+    public String hotelName;
+    public int regularCustomerRate;
 
-    public Hotel(String hotelName, int rating, int weekDayRates, int weekendRates) {
+    public Hotel(String hotelName, int regularCustomerRate) {
         this.hotelName = hotelName;
-        this.rating = rating;
-        this.weekDayRates = weekDayRates;
-        this.weekendRates = weekendRates;
-    }
-    public String getHotelName(){
-        return this.hotelName;
-    }
-    public int getWeekDayRates() {
-        return this.weekDayRates;
-    }
-    public int getWeekendRates() {
-        return weekendRates;
+        this.regularCustomerRate = regularCustomerRate;
     }
 
+    @Override
+    public String toString() {
+        String str = "Hotel name : " + this.hotelName + " rates for regular customer : " + this.regularCustomerRate;
+        return str;
+    }
+
+    // method to calculate price
+    public int calculatePrice(String[] days) {
+        int totalAmount = 0;
+        int day=0;
+        while(day<days.length) {
+            totalAmount += this.regularCustomerRate;
+            day++;
+        }
+        return totalAmount;
+    }
 }

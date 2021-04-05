@@ -1,2 +1,2 @@
-com/bridgelabz/hotelreservationtest/HotelReservationTest.java
- com.bridgelabz.hotelreservationtest.HotelReservationTest
+com/bridgelabz/hotelreservation/HotelReservationTest.java
+ com.bridgelabz.hotelreservation.HotelReservationTest

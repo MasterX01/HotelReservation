@@ -1,13 +1,34 @@
 package com.bridgelabz.hotelreservation;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class HotelReservation {
-    ArrayList<Hotel> listOfHotels = new ArrayList<>();
+    public List<Hotel> listOfHotels = new ArrayList<>();
 
-    public boolean addHotel(String hotelName, int rating, int weekDayRates, int weekendRates){
-        listOfHotels.add(new Hotel(hotelName, rating, weekDayRates, weekendRates));
-        return !listOfHotels.isEmpty();
+    public static void display() {
+        System.out.println("Welcome to hotel reservation program");
+    }
+
+    // method to add hotels
+    public void add(Hotel... hotels) {
+        int i = 0;
+        while (i < hotels.length) {
+            listOfHotels.add(hotels[i]);
+            i++;
+        }
+    }
+
+    public Hotel findCheapestHotel(String... days) {
+        int lowestPrice = 0;
+        Hotel cheapHotel = listOfHotels.get(0);
+        for (int hotel = 0; hotel < listOfHotels.size(); hotel++) {
+            int price = listOfHotels.get(hotel).calculatePrice(days);
+            if (price < lowestPrice) {
+                lowestPrice = price;
+                cheapHotel = listOfHotels.get(hotel);
+            }
+        }
+        return cheapHotel;
     }
 
 }

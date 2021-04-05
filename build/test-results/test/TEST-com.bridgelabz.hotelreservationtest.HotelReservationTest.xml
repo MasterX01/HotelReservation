@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.hotelreservationtest.HotelReservationTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-03-27T03:59:53" hostname="DESKTOP-2DC5FKU" time="0.026">
-  <properties/>
-  <testcase name="givenHotelDetails_whenAdding3rdHotel_ShouldReturnTrue()" classname="com.bridgelabz.hotelreservationtest.HotelReservationTest" time="0.021"/>
-  <testcase name="givenHotelDetails_whenAdding2ndHotel_ShouldReturnTrue()" classname="com.bridgelabz.hotelreservationtest.HotelReservationTest" time="0.001"/>
-  <testcase name="givenHotelDetails_whenAdding1stHotel_ShouldReturnTrue()" classname="com.bridgelabz.hotelreservationtest.HotelReservationTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
