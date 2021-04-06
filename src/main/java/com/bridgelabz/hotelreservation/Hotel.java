@@ -9,14 +9,15 @@ public class Hotel {
     public String hotelName;
     public int regularWeekDayRate;
     public int regularWeekEndRate;
+    public int rating;
 
-    public Hotel(String hotelName, int regularWeekDayRate, int regularWeekEndRate) {
+    public Hotel(String hotelName, int regularWeekDayRate, int regularWeekEndRate, int rating) {
         this.hotelName = hotelName;
         this.regularWeekDayRate = regularWeekDayRate;
         this.regularWeekEndRate = regularWeekEndRate;
-
+        this.rating = rating;
     }
-    
+
     public static String getDayOfWeek(String date) throws ParseException {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("ddMMMyyyy");
