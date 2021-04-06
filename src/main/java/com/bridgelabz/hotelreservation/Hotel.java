@@ -16,14 +16,7 @@ public class Hotel {
         this.regularWeekEndRate = regularWeekEndRate;
 
     }
-
-    @Override
-    public String toString() {
-        String str = "Hotel name : " + this.hotelName + " rates for regular customer : " + this.regularWeekDayRate;
-        return str;
-    }
-
-    // method to get day-weekday/weekend
+    
     public static String getDayOfWeek(String date) throws ParseException {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("ddMMMyyyy");

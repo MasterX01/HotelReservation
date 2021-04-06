@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.hotelreservation.HotelReservationTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-04-06T01:53:04" hostname="DESKTOP-2DC5FKU" time="0.037">
+<testsuite name="com.bridgelabz.hotelreservation.HotelReservationTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-04-06T02:09:45" hostname="DESKTOP-2DC5FKU" time="0.09">
   <properties/>
-  <testcase name="whenGivenHotel_WhenAdded_ShouldMatchTheAdded()" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.024"/>
-  <testcase name="given3Hotels_whenGivenDatesIncludingWeekends_ShouldReturnCheapestHotel()" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.004"/>
-  <testcase name="given3Hotels_whenGivenDates_ShouldReturnCheapestHotel()" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.002"/>
-  <testcase name="givenWeekendRate_WhenAdded_ShouldMatch()" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.001"/>
+  <testcase name="whenGivenHotel_WhenAdded_ShouldMatchTheAdded()" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.036"/>
+  <testcase name="given3Hotels_whenGivenDatesIncludingWeekends_ShouldReturnCheapestHotel()" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.042"/>
+  <testcase name="given3Hotels_whenGivenDates_ShouldReturnCheapestHotel()" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.004"/>
+  <testcase name="givenWeekendRate_WhenAdded_ShouldMatch()" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
