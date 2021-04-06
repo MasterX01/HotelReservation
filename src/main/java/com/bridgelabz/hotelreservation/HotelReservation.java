@@ -1,9 +1,10 @@
 package com.bridgelabz.hotelreservation;
-
+import com.bridgelabz.hotelreservation.Hotel.customers;
 import java.text.ParseException;
 import java.util.*;
 
 public class HotelReservation {
+
     public List<Hotel> listOfHotels = new ArrayList<>();
 
     public void add(Hotel... hotels) {
@@ -14,28 +15,29 @@ public class HotelReservation {
         }
     }
 
-    public Hotel findCheapestHotel(Hotel.customers type, String... days) throws ParseException {
-        int lowestPrice = Integer.MAX_VALUE;
-        Hotel cheapHotel = listOfHotels.get(0);
-        for (int hotel = 0; hotel < listOfHotels.size(); hotel++) {
-            int price = listOfHotels.get(hotel).calculatePrice(type, days);
-            if (price < lowestPrice) {
-                lowestPrice = price;
-                cheapHotel = listOfHotels.get(hotel);
+    public Hotel findCheapestHotel(customers type, String... days) throws ParseException {
+        Hotel cheapHotel = listOfHotels.stream().sorted((Hotel hotel1, Hotel hotel2) -> {
+            try {
+                int compare = hotel1.calculatePrice(type, days).compareTo(hotel2.calculatePrice(type, days));
+                if (compare == 0 && hotel1.rating > hotel2.rating)
+                    compare = -1;
+                return compare;
+            } catch (ParseException e) {
+                e.printStackTrace();
             }
-            if (price == lowestPrice && cheapHotel.rating < listOfHotels.get(hotel).rating)
-                cheapHotel = listOfHotels.get(hotel);
-        }
+            return 0;
+        }).findFirst().orElse(null);
+        System.out.println("cheapest hotel = " + cheapHotel.hotelName + " with rating : " + cheapHotel.rating
+                + " with price : " + cheapHotel.calculatePrice(type, days));
+
         return cheapHotel;
     }
 
-    public Hotel findBestRatedHotel() throws ParseException {
-        int rating = 0;
-        Hotel bestRated = listOfHotels.get(0);
-        for (int hotel = 0; hotel < listOfHotels.size(); hotel++) {
-            if (rating < listOfHotels.get(hotel).rating)
-                bestRated = listOfHotels.get(hotel);
-        }
+    public Hotel findBestRatedHotel(String... days) throws ParseException {
+        Hotel bestRated = listOfHotels.stream().sorted((Hotel hotel1, Hotel hotel2) -> {
+            return hotel2.rating.compareTo(hotel1.rating);
+        }).findFirst().orElse(null);
+        System.out.println("best rated = " + bestRated.hotelName + " with rating : " + bestRated.rating);
         return bestRated;
     }
 

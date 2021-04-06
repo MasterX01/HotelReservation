@@ -94,4 +94,14 @@ public class HotelReservationTest {
         Assertions.assertEquals("Bridgewood", cheapHotel.hotelName);
     }
 
+    @Test
+    public void given3Hotels_whenGivenDatesAndRegularOrLoyalty_ShouldReturnCheapestHotelUsingStreams() throws ParseException {
+        Hotel hotel1 = new Hotel("Lakewood", 110, 90, 3, 80, 80);
+        Hotel hotel2 = new Hotel("Bridgewood", 150, 50,4, 110, 50);
+        Hotel hotel3 = new Hotel("Ridgewood", 220, 150, 5, 100, 40);
+        hotelreservation.add(hotel1, hotel2, hotel3);
+        Hotel cheapHotel = hotelreservation.findCheapestHotel(Hotel.customers.LOYALTY,"11Sep2020", "12Sep2020");
+        Assertions.assertEquals("Ridgewood", cheapHotel.hotelName);
+    }
+
 }

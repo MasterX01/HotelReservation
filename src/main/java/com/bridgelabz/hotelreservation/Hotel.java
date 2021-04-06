@@ -11,7 +11,7 @@ public class Hotel {
     public int regularWeekEndRate;
     public int loyaltyWeekDayRates;
     public int loyaltyWeekendRates;
-    public int rating;
+    int rating;
 
     enum customers{
         REGULAR, LOYALTY;
@@ -40,9 +40,9 @@ public class Hotel {
         for (int day = 0; day < days.length; day++) {
             String whichDay = getDayOfWeek(days[day]);
             if (whichDay.equals("Sat") || whichDay.equals("Sun")) {
-                totalAmount += this.regularWeekEndRate;
+                totalAmount += type == customers.REGULAR ? this.regularWeekEndRate : this.loyaltyWeekendRates;
             } else{
-                totalAmount += this.regularWeekDayRate;
+                totalAmount += type == customers.REGULAR ? this.regularWeekDayRate : this.loyaltyWeekDayRates;
             }
         }
         return totalAmount;
