@@ -50,7 +50,7 @@ public class HotelReservationTest {
         Hotel hotel3 = new Hotel("Ridgewood", 220, 150, 5);
         hotelreservation.add(hotel1, hotel2, hotel3);
         Hotel cheapHotel = hotelreservation.findCheapestHotel("11Sep2020", "12Sep2020");
-        Assertions.assertEquals("Bridgewood", cheapHotel.hotelName);
+        Assertions.assertEquals("Bridgewood ", cheapHotel.hotelName);
     }
 
     @Test
