@@ -9,13 +9,17 @@ public class Hotel {
     public String hotelName;
     public int regularWeekDayRate;
     public int regularWeekEndRate;
+    public int loyaltyWeekDayRates;
+    public int loyaltyWeekendRates;
     public int rating;
 
-    public Hotel(String hotelName, int regularWeekDayRate, int regularWeekEndRate, int rating) {
+    public Hotel(String hotelName, int regularWeekDayRate, int regularWeekEndRate, int rating, int loyaltyWeekDayRates, int loyaltyWeekendRates) {
         this.hotelName = hotelName;
         this.regularWeekDayRate = regularWeekDayRate;
         this.regularWeekEndRate = regularWeekEndRate;
         this.rating = rating;
+        this.loyaltyWeekDayRates = loyaltyWeekDayRates;
+        this.loyaltyWeekendRates = loyaltyWeekendRates;
     }
 
     public static String getDayOfWeek(String date) throws ParseException {
