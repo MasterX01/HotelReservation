@@ -1,5 +1,6 @@
 package com.bridgelabz.hotelreservation;
 
+import java.text.ParseException;
 import java.util.*;
 
 public class HotelReservation {
@@ -13,7 +14,7 @@ public class HotelReservation {
         }
     }
 
-    public Hotel findCheapestHotel(String... days) {
+    public Hotel findCheapestHotel(String... days) throws ParseException {
         int lowestPrice = 0;
         Hotel cheapHotel = listOfHotels.get(0);
         for (int hotel = 0; hotel < listOfHotels.size(); hotel++) {

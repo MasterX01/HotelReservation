@@ -23,7 +23,7 @@ public class HotelReservationTest {
     }
 
     @Test
-    public void given3Hotels_whenGivenDates_ShouldReturnCheapestHotel() {
+    public void given3Hotels_whenGivenDates_ShouldReturnCheapestHotel() throws ParseException{
         Hotel hotel1 = new Hotel("Lakewood", 110, 90);
         Hotel hotel2 = new Hotel("Bridgewood", 150, 50);
         Hotel hotel3 = new Hotel("Ridgewood", 220, 150);
