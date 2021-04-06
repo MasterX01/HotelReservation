@@ -17,7 +17,7 @@ public class HotelReservationTest {
         Hotel hotel2 = new Hotel("Bridgewood", 150, 50,4, 110, 50);
         Hotel hotel3 = new Hotel("Ridgewood", 220, 150, 5, 100, 40);
         hotelreservation.add(hotel1, hotel2, hotel3);
-        Hotel hotel = new Hotel("Ridgewood", 220, 150, 5);
+        Hotel hotel = new Hotel("Ridgewood", 220, 150, 5, 100, 40);
         Assertions.assertEquals("Ridgewood", hotel.hotelName);
         Assertions.assertEquals(220, hotel.regularWeekDayRate);
     }
@@ -28,7 +28,7 @@ public class HotelReservationTest {
         Hotel hotel2 = new Hotel("Bridgewood", 150, 50,4, 110, 50);
         Hotel hotel3 = new Hotel("Ridgewood", 220, 150, 5, 100, 40);
         hotelreservation.add(hotel1, hotel2, hotel3);
-        Hotel cheapHotel = hotelreservation.findCheapestHotel("16March2020", "17March2020", "18March2020");
+        Hotel cheapHotel = hotelreservation.findCheapestHotel(Hotel.customers.REGULAR, "16March2020", "17March2020", "18March2020");
         Assertions.assertEquals("Lakewood", cheapHotel.hotelName);
     }
 
@@ -49,7 +49,7 @@ public class HotelReservationTest {
         Hotel hotel2 = new Hotel("Bridgewood", 150, 50,4, 110, 50);
         Hotel hotel3 = new Hotel("Ridgewood", 220, 150, 5, 100, 40);
         hotelreservation.add(hotel1, hotel2, hotel3);
-        Hotel cheapHotel = hotelreservation.findCheapestHotel("11Sep2020", "12Sep2020");
+        Hotel cheapHotel = hotelreservation.findCheapestHotel(Hotel.customers.REGULAR,"11Sep2020", "12Sep2020");
         Assertions.assertEquals("Bridgewood", cheapHotel.hotelName);
     }
 
@@ -70,7 +70,7 @@ public class HotelReservationTest {
         Hotel hotel2 = new Hotel("Bridgewood", 150, 50,4, 110, 50);
         Hotel hotel3 = new Hotel("Ridgewood", 220, 150, 5, 100, 40);
         hotelreservation.add(hotel1, hotel2, hotel3);
-        Hotel cheapHotel = hotelreservation.findCheapestHotel("11Sep2020", "12Sep2020");
+        Hotel cheapHotel = hotelreservation.findCheapestHotel(Hotel.customers.REGULAR,"11Sep2020", "12Sep2020");
         Assertions.assertEquals("Bridgewood", cheapHotel.hotelName);
     }
 
@@ -80,8 +80,18 @@ public class HotelReservationTest {
         Hotel hotel2 = new Hotel("Bridgewood", 150, 50,4, 110, 50);
         Hotel hotel3 = new Hotel("Ridgewood", 220, 150, 5, 100, 40);
         hotelreservation.add(hotel1, hotel2, hotel3);
-        Hotel bestRated = hotelreservation.findBestRatedHotel("11Sep2020", "12Sep2020");
+        Hotel bestRated = hotelreservation.findBestRatedHotel();
         Assertions.assertEquals("Ridgewood", bestRated.hotelName);
+    }
+
+    @Test
+    public void given3Hotels_whenGivenDatesForRewardedCustomer_shouldReturnBestHotel() throws ParseException {
+        Hotel hotel1 = new Hotel("Lakewood", 110, 90, 3, 80, 80);
+        Hotel hotel2 = new Hotel("Bridgewood", 150, 50,4, 110, 50);
+        Hotel hotel3 = new Hotel("Ridgewood", 220, 150, 5, 100, 40);
+        hotelreservation.add(hotel1, hotel2, hotel3);
+        Hotel cheapHotel = hotelreservation.findCheapestHotel(Hotel.customers.LOYALTY,"11Sep2020", "12Sep2020");
+        Assertions.assertEquals("Bridgewood", cheapHotel.hotelName);
     }
 
 }

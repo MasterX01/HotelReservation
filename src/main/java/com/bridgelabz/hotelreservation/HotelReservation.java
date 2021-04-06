@@ -14,11 +14,11 @@ public class HotelReservation {
         }
     }
 
-    public Hotel findCheapestHotel(String... days) throws ParseException {
+    public Hotel findCheapestHotel(Hotel.customers type, String... days) throws ParseException {
         int lowestPrice = Integer.MAX_VALUE;
         Hotel cheapHotel = listOfHotels.get(0);
         for (int hotel = 0; hotel < listOfHotels.size(); hotel++) {
-            int price = listOfHotels.get(hotel).calculatePrice(days);
+            int price = listOfHotels.get(hotel).calculatePrice(type, days);
             if (price < lowestPrice) {
                 lowestPrice = price;
                 cheapHotel = listOfHotels.get(hotel);
@@ -29,7 +29,7 @@ public class HotelReservation {
         return cheapHotel;
     }
 
-    public Hotel findBestRatedHotel(String... days) throws ParseException {
+    public Hotel findBestRatedHotel() throws ParseException {
         int rating = 0;
         Hotel bestRated = listOfHotels.get(0);
         for (int hotel = 0; hotel < listOfHotels.size(); hotel++) {

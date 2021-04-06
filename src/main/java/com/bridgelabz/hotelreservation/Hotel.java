@@ -13,6 +13,10 @@ public class Hotel {
     public int loyaltyWeekendRates;
     public int rating;
 
+    enum customers{
+        REGULAR, LOYALTY;
+    }
+
     public Hotel(String hotelName, int regularWeekDayRate, int regularWeekEndRate, int rating, int loyaltyWeekDayRates, int loyaltyWeekendRates) {
         this.hotelName = hotelName;
         this.regularWeekDayRate = regularWeekDayRate;
@@ -31,7 +35,7 @@ public class Hotel {
         return day;
     }
 
-    public int calculatePrice(String... days) throws ParseException {
+    public int calculatePrice(customers type, String... days) throws ParseException {
         int totalAmount = 0;
         for (int day = 0; day < days.length; day++) {
             String whichDay = getDayOfWeek(days[day]);
