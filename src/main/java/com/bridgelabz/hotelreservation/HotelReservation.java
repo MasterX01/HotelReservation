@@ -29,4 +29,14 @@ public class HotelReservation {
         return cheapHotel;
     }
 
+    public Hotel findBestRatedHotel(String... days) throws ParseException {
+        int rating = 0;
+        Hotel bestRated = listOfHotels.get(0);
+        for (int hotel = 0; hotel < listOfHotels.size(); hotel++) {
+            if (rating < listOfHotels.get(hotel).rating)
+                bestRated = listOfHotels.get(hotel);
+        }
+        return bestRated;
+    }
+
 }
